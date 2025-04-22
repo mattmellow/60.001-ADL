@@ -102,13 +102,13 @@ cd deepfake-detection-GANFingerprint
 2. Create and activate a virtual environment:
 ```bash
 # Create virtual environment
-python -m venv ganfingerprint-env
+python -m venv myenv
 
 # Activate on Linux/Mac
-source ganfingerprint-env/bin/activate
+source myenv/bin/activate
 
 # Activate on Windows
-ganfingerprint-env\Scripts\activate
+myenv\Scripts\activate
 ```
 
 3. Install dependencies:
