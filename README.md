@@ -76,7 +76,7 @@ The notebook will load the model and output performance metrics like Accuracy, F
 
 ---
 
-## 🧪 Required Libraries
+##  Required Libraries
 
 Make sure the following libraries are installed:
 
