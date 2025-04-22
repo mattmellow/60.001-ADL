@@ -25,23 +25,29 @@ This project explores a **deepfake detection pipeline** using a **hybrid Encoder
 ```
 project_root/
 │
-├── main_train.py              # Main training and testing script
-├── config.py                  # Configuration loader
-├── config.yaml                # Training and model config file
+├── HybridViTED_train.py          # Main training and evaluation script (replaces main_train.py)
+├── HybridViTED_predict.py        # Predict single image using trained ViTED model
+├── HybridViTED_get_metrics.py    # Extract metrics from saved .pkl files
 │
 ├── dataset/
-│   └── loader.py              # Data loading and splitting utilities
+│   └── loader.py                 # Data loader and pre-processing pipeline
 │
 ├── model/
-│   ├── genconvit_ed.py        # ViTED model architecture (encoder-decoder + ViT)
-│   └── model_embedder.py      # SwinTransformer wrapper for patch embedding
+│   ├── genconvit_ed.py           # Hybrid Encoder-Decoder ViT architecture
+│   ├── model_embedder.py         # Swin Transformer wrapper for embedding
+│   ├── config.py                 # Configuration loader
+│   └── config.yaml               # YAML config for training and model settings
 │
 ├── train/
-│   └── train_ed.py            # Training and validation loop
+│   └── train_ed.py               # Training and validation functions
 │
-├── weight/                    # Saved model weights (.pth) and training logs (.pkl)
-├── images/                    # Input images for inference
-└── *.png / *.jpg              # Example data for testing
+├── weight/                       # Saved model weights (.pth) and training metrics (.pkl)
+│
+├── images/                       # Folder for storing test images used during prediction
+│   └── *.png / *.jpg             # Example images for testing inference
+│
+└── README.md                     # Project instructions, usage, architecture, and logs
+
 ```
 
 ---
@@ -65,17 +71,15 @@ img_size: 224
 
 ## 🚀 How to Train
 
-### From Scratch
+### From Scratch for the best model
 
 ```bash
-python HybridViTED_train.py --d kaggle_train_data --e 25 -t y
+python HybridViTED_train.py --d kaggle_train_data --e 20 -t y
 ```
 
 **Arguments**:
 - `--d`: dataset directory
 - `--e`: number of epochs
-- `--p`: path to pretrained model
-- `--t`: test after training
 
 ---
 
@@ -135,6 +139,6 @@ Main packages:
 
 ## 📬 Acknowledgements
 
-- Based on concepts from [GANFingerprints](https://github.com) and [Swin Transformer](https://github.com/microsoft/Swin-Transformer).
-- Trained on Kaggle's deepfake image datasets.
+This project is adapted from the original [GenConViT GitHub repository](https://github.com/erprogs/GenConViT), which implements the Generative Convolutional Vision Transformer for deepfake detection. Significant modifications were made, including the integration of resnet18 into hybrid encoder-decoder architecture, iterative training experiments, and extended evaluation tooling for comprehensive performance analysis.
+- Trained using the [Deepfake and Real Images Dataset from Kaggle](https://www.kaggle.com/datasets/manjilkarki/deepfake-and-real-images).
 - Inspired by Vision Transformer and hybrid CNN-ViT models.
