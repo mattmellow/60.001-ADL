@@ -94,6 +94,10 @@ The model evaluates performance using:
 
 These are logged in the console and saved in `.pkl` logs.
 
+```bash
+python HybridViTED_get_metrics.py --model weight/genconvit_ed.pth --data path/to/image --batch_size 32
+```
+
 ---
 
 ## 🔄 Iterations & Tuning
@@ -113,7 +117,7 @@ These are logged in the console and saved in `.pkl` logs.
 ## 🧪 Inference Example
 
 ```bash
-python HybridViTED_predict.py --image path/to/image.png --model weight/genconvit_ed.pth
+python HybridViTED_predict.py --image path/to/image --model weight/genconvit_ed.pth
 ```
 
 Optional: add `--label_encoder your_encoder.pkl` for class names.
