@@ -34,21 +34,14 @@ For validation and testing, only resizing and normalization were applied to ensu
 
 ##  How to Run the Code
 
-###  1. Clone the Repo
-
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-```
-
-### 2. Install Required Libraries
+### 1. Install Required Libraries
 
 ```bash
 pip install torch torchvision scikit-learn matplotlib pandas pillow
 ```
 
 
-### 3. Train the Model
+### 2. Train the Model
 
 Open and run the notebook:
 
