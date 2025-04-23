@@ -48,22 +48,24 @@ Our approach is structured around:
 └── README.md
 ```
 
-## 🗃️ Dataset Instructions
+## 🗃️ Dataset and weight files Instructions
 
 We used the **[Deepfake and Real Images](https://www.kaggle.com/datasets/manjilkarki/deepfake-and-real-images)** dataset (based on OpenForensics).
 
+All weight files, as well as the zipped dataset are made available (only to SUTD email holders) via this Sharepoint folder: https://sutdapac.sharepoint.com/:f:/s/SDSMushroomersADLDeepfakers/EjiZHgFizgxPhs5HpNmRlwgButzHrzzIq0NWhi1Q7nymWw?e=UPkdXs
+
 1. Download and unzip the dataset.
 2. Place it inside the `data/` directory.
-3. Ensure it maintains the following structure:
+3. The dataset should already have the following structure:
 
 ```plaintext
 data/
 ├── train/
-├── val/
+├── validation/
 └── test/
 ```
 
-Each subfolder should include labeled `real` and `fake` directories with image files.
+Each subfolder should include labeled `Real` and `Fake` directories with image files.
 
 ## 📁 Running the Code
 
@@ -74,7 +76,7 @@ Every model folder contains its own `README.md` with:
 - Expected input structure
 - Best-performing checkpoints
 
-Refer to each folder depending on the architecture you'd like to explore or retrain.
+Refer to each folder depending on the architecture you'd like to explore.
 
 ## 💡 Conclusion
 
