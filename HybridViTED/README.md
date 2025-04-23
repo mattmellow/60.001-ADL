@@ -73,10 +73,15 @@ img_size: 224
 
 ### From Scratch for the best model
 
+Dataset directory is set:
+```bash
+python HybridViTED_train.py --e 20 -t y
+```
+
+In case new dataset location:
 ```bash
 python HybridViTED_train.py --d kaggle_train_data --e 20 -t y
 ```
-
 **Arguments**:
 - `--d`: dataset directory
 - `--e`: number of epochs

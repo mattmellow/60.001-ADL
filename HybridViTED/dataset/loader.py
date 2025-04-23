@@ -86,7 +86,7 @@ def load_data(data_dir="../../data", batch_size=4):
     data_dir = data_dir
     image_datasets = {
         x: datasets.ImageFolder(os.path.join(data_dir, x), normalize_data()[x])
-        for x in ["train", "validation", "test"]
+        for x in ["train", "valid", "test"]
     }
 
     # dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size,
@@ -97,10 +97,10 @@ def load_data(data_dir="../../data", batch_size=4):
     adjust to train only 50% of data
     """
     train_len = len(image_datasets["train"])
-    subset_indices = random.sample(range(train_len), int(train_len * 0.8))
+    subset_indices = random.sample(range(train_len), int(train_len * 1))
     image_datasets["train"] = Subset(image_datasets["train"], subset_indices)
 
-    dataset_sizes = {x: len(image_datasets[x]) for x in ["train", "validation", "test"]}
+    dataset_sizes = {x: len(image_datasets[x]) for x in ["train", "valid", "test"]}
 
     train_dataloaders = torch.utils.data.DataLoader(
         image_datasets["train"],
@@ -110,7 +110,7 @@ def load_data(data_dir="../../data", batch_size=4):
         pin_memory=True,
     )
     validation_dataloaders = torch.utils.data.DataLoader(
-        image_datasets["validation"],
+        image_datasets["valid"],
         batch_size,
         shuffle=False,
         num_workers=0,
