@@ -39,7 +39,7 @@ def normalize_data():
         "vid": transforms.Compose([transforms.Normalize(mean, std)]),
     }
 
-def load_data(data_dir = 'sample/', batch_size=32):
+def load_data(data_dir = '../../data', batch_size=32):
     batch_size=batch_size
     data_dir = data_dir
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
