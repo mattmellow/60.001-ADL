@@ -126,6 +126,29 @@ Optional: add `--label_encoder your_encoder.pkl` for class names.
 
 ## 🧱 Dependencies
 
+Before installing this project's Python dependencies, ensure that CMake is properly installed. The face-recognition package relies on dlib, which requires CMake to build from source.
+
+🔧 Step 1: Install CMake
+Linux (Ubuntu/Debian)
+```bash
+sudo apt update
+sudo apt install cmake
+```
+macOS (with Homebrew)
+```bash
+brew install cmake
+```
+Windows
+
+Download and install CMake from: https://cmake.org/download/
+
+During installation, ensure you check the option to add CMake to the system PATH.
+
+After installation, verify CMake is available:
+
+```bash
+cmake --version
+```
 Install dependencies using:
 
 ```bash
@@ -133,13 +156,18 @@ pip install -r requirements.txt
 ```
 
 Main packages:
-- PyTorch
 - `timm` (for ViTs)
 - OpenCV / PIL
 - scikit-learn
 - Albumentations
 
 ---
+
+To run the model with Cuda GPU acceleration, install Pytorch with CUDA:
+
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
 
 ## 📬 Acknowledgements
 
