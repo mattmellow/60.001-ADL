@@ -181,7 +181,7 @@ def gen_parser():
 
     (options, _) = parser.parse_args()
 
-    dir_path = options.dir
+    dir_path = options.dir if options.dir else "../data"
     epoch = options.epoch
     mod = "ed"
     test_model = "y" if options.test else None

@@ -8,12 +8,6 @@ This repository implements a CViT-based image classification pipeline to detect 
 
 CViT (Convolutional Vision Transformer) is a Transformer-based model that learns patch-wise attention, enhanced by convolutional embeddings. It is optimized for binary classification: **REAL** vs **FAKE** images.
 
----
-
-### Link To Download Best Model For Weight
-https://sutdapac-my.sharepoint.com/:u:/g/personal/edward_tang_mymail_sutd_edu_sg/EaGLH-ZShP9Il36Ak0SA0R0BBaZZGZed80enb4ANDkMe0A?e=8bw1Fq
-
----
 
 ### 📁 Project Structure
 
@@ -21,7 +15,6 @@ https://sutdapac-my.sharepoint.com/:u:/g/personal/edward_tang_mymail_sutd_edu_sg
 .
 ├── cvit_train.py              # Training script
 ├── cvit_infer_images.py       # Inference script
-├── data                       # This is where you put your dataset
 ├── helpers
 │   └──augmentation.py         # Strong image augmentation setup
 │   └──loader.py               # Torch DataLoader setup with albumentations
@@ -64,12 +57,17 @@ Ensure that only **one** `cvit.py` exists in the `model/` directory at a time to
 pip install -r requirements.txt
 ```
 
+Install Pytorch with Cuda for faster training
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
 ---
 
 ### 🚀 Training
 
 ```bash
-python cvit_train.py -e 30 -d ./data -b 32 -l 0.00005 -w 0.0000001 
+python cvit_train.py -e 30 -d ../data -b 32 -l 0.00005 -w 0.0000001 
 ```
 
 **Arguments**:
@@ -80,13 +78,17 @@ python cvit_train.py -e 30 -d ./data -b 32 -l 0.00005 -w 0.0000001
 - `-w` or `--wdecay`: Weight decay
 - `-t` or `--test`: Run test after training
 
+Saved models are located in `\weight` as `pth` files. 
+
 ---
 
 ### 🔍 Inference
 
 ```bash
-python cvit_infer_images.py --folder ./data/test --weights ./weight/cvit_deepfake_detection_xxx.pth
+python cvit_infer_images.py --folder ../data/test --weights ./weight/cvit_best_model.pth
 ```
+
+To load the best model, simply place the `cvit_best_model.pth` file into `\weight` directory. 
 
 - Saves predictions to `image_predictions.json`
 - Outputs confusion matrix image `confusion_matrix.png`

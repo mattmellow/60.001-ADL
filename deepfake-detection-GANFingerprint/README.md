@@ -91,15 +91,7 @@ The Jupyter Notebook file **GANFingerprint.ipynb** is created with instructions 
 
 However, it is also possible to run the model through bash commands. The instructions below cover the full process.
 
-### Option 1: Using pip
-
-1. Clone the repository:
-```bash
-git clone https://github.com/LZ-sudo/deepfake-detection-GANFingerprint.git
-cd deepfake-detection-GANFingerprint
-```
-
-2. Create and activate a virtual environment:
+1. Create and activate a virtual environment:
 ```bash
 # Create virtual environment
 python -m venv myenv
@@ -115,35 +107,16 @@ myenv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-
+4. Install Pytorch with Cuda for GPU acceleration
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
 ### Option 2: Using Conda
 
-1. Clone the repository:
-```bash
-git clone https://github.com/LZ-sudo/deepfake-detection-GANFingerprint.git
-cd deepfake-detection-GANFingerprint
-```
-
-2. Create and activate a conda environment:
+1. Create and activate a conda environment:
 ```bash
 conda env create -f environment.yml
 conda activate ganfingerprint
-```
-
-## Dataset Preparation
-
-Prepare your dataset with the following structure:
-```
-data/
-├── train/
-│   ├── real/   # Real images
-│   └── fake/   # Fake/deepfake images
-├── validation/
-│   ├── real/
-│   └── fake/
-└── test/
-    ├── real/
-    └── fake/
 ```
 
 ## Configuration

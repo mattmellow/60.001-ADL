@@ -2,13 +2,13 @@ import os
 from datetime import datetime
 
 # Dataset paths
-DATA_ROOT = "data"  # Change this to your dataset directory
-TRAIN_REAL_DIR = os.path.join(DATA_ROOT, "train/real")
-TRAIN_FAKE_DIR = os.path.join(DATA_ROOT, "train/fake")
-VAL_REAL_DIR = os.path.join(DATA_ROOT, "validation/real")
-VAL_FAKE_DIR = os.path.join(DATA_ROOT, "validation/fake")
-TEST_REAL_DIR = os.path.join(DATA_ROOT, "test/real")
-TEST_FAKE_DIR = os.path.join(DATA_ROOT, "test/fake")
+DATA_ROOT = "../data"  # Change this to your dataset directory
+TRAIN_REAL_DIR = os.path.join(DATA_ROOT, "train/Real")
+TRAIN_FAKE_DIR = os.path.join(DATA_ROOT, "train/Fake")
+VAL_REAL_DIR = os.path.join(DATA_ROOT, "validation/Real")
+VAL_FAKE_DIR = os.path.join(DATA_ROOT, "validation/Fake")
+TEST_REAL_DIR = os.path.join(DATA_ROOT, "test/Real")
+TEST_FAKE_DIR = os.path.join(DATA_ROOT, "test/Fake")
 
 # Model parameters
 INPUT_SIZE = 256  # Input image size

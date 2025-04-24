@@ -29,7 +29,6 @@ print(f'using {device}')
 def train(dir_path, num_epochs, test_model, batch_size, lr, weight_decay):
     _, dataloaders, dataset_sizes = load_data(dir_path, batch_size)
 
-
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     criterion = torch.nn.CrossEntropyLoss()
     criterion.to(device)
