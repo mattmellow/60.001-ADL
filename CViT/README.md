@@ -78,6 +78,8 @@ python cvit_train.py -e 30 -d ../data -b 32 -l 0.00005 -w 0.0000001
 - `-w` or `--wdecay`: Weight decay
 - `-t` or `--test`: Run test after training
 
+Saved models are located in `\weight` as `pth` files. 
+
 ---
 
 ### 🔍 Inference
@@ -85,6 +87,8 @@ python cvit_train.py -e 30 -d ../data -b 32 -l 0.00005 -w 0.0000001
 ```bash
 python cvit_infer_images.py --folder ../data/test --weights ./weight/cvit_best_model.pth
 ```
+
+To load the best model, simply place the `cvit_best_model.pth` file into `\weight` directory. 
 
 - Saves predictions to `image_predictions.json`
 - Outputs confusion matrix image `confusion_matrix.png`
